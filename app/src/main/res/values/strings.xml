@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Country List</string>
+    <string name="country_name_1">RDC</string>
+    <string name="country_capital_1">Kinshasa</string>
+    <string name="country_code_1">CD</string>
+    <string name="country_name_2">France</string>
+    <string name="country_capital_2">Paris</string>
+    <string name="country_code_2">FR</string>
+    <string name="country_name_3">Canada</string>
+    <string name="country_capital_3">Ottawa</string>
+    <string name="country_code_3">CA</string>
+    <string name="country_name_4">Japon</string>
+    <string name="country_capital_4">Tokyo</string>
+    <string name="country_code_4">JP</string>
+    <string name="country_name_5">Italie</string>
+    <string name="country_capital_5">Rome</string>
+    <string name="country_code_5">IT</string>
+    <string name="country_name_6">Brésil</string>
+    <string name="country_capital_6">Brasília</string>
+    <string name="country_code_6">BR</string>
+    <string name="country_name_7">Maroc</string>
+    <string name="country_capital_7">Rabat</string>
+    <string name="country_code_7">MA</string>
+    <string name="country_name_8">Allemagne</string>
+    <string name="country_capital_8">Berlin</string>
+    <string name="country_code_8">DE</string>
+    <string name="country_name_9">Argentine</string>
+    <string name="country_capital_9">Buenos Aires</string>
+    <string name="country_code_9">AR</string>
+    <string name="country_name_10">Inde</string>
+    <string name="country_capital_10">New Delhi</string>
+    <string name="country_code_10">IN</string>
+</resources>
