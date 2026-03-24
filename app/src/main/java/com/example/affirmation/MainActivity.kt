@@ -5,17 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -27,7 +26,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.affirmation.data.CountryDataSource
 import com.example.affirmation.model.Country
 import com.example.affirmation.ui.theme.AffirmationTheme
@@ -58,14 +57,13 @@ fun CountryListApp() {
 @Composable
 fun CountryList(countryList: List<Country>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2 ),
+        columns = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         modifier = modifier
     ) {
         items(countryList) { country ->
-            CountryItem(
-                country = country,
-                modifier = Modifier.padding(8.dp)
-            )
+            CountryItem(country)
         }
     }
 }
@@ -74,37 +72,40 @@ fun CountryList(countryList: List<Country>, modifier: Modifier = Modifier) {
 
 @Composable
 fun CountryItem(country: Country, modifier: Modifier = Modifier) {
-    Card(modifier = modifier) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        ) {
-            Image(
-                painter = painterResource(country.flagResourceId),
-                contentDescription = stringResource(country.nameResourceId),
-                modifier = Modifier
-                    .weight(1f)
-                    .height(140.dp),
-                contentScale = ContentScale.Crop
-            )
-            Column(
-                modifier = Modifier
-                    .weight(1f)
-                    .padding(start = 16.dp)
-            ) {
+    Card(modifier = modifier.padding(dimensionResource(R.dimen.padding_small))) {
+        Row {
+            Box {
+                Image(
+                    painter = painterResource(country.flagResourceId),
+                    contentDescription = stringResource(country.nameResourceId),
+                    modifier = Modifier
+                        .size(width = dimensionResource(R.dimen.image_size), height = dimensionResource(R.dimen.image_size))
+                        .aspectRatio(1f),
+                    contentScale = ContentScale.Crop
+                )
+            }
+
+            Column {
                 Text(
                     text = stringResource(country.nameResourceId),
-                    style = MaterialTheme.typography.headlineMedium
+                    fontSize = dimensionResource(R.dimen.text_size_title).value.sp,
+                    modifier = Modifier.padding(
+                        start = dimensionResource(R.dimen.padding_medium),
+                        top = dimensionResource(R.dimen.padding_medium),
+                        end = dimensionResource(R.dimen.padding_medium),
+                        bottom = dimensionResource(R.dimen.padding_small)
+                    )
                 )
                 Row {
                     Text(
                         text = stringResource(country.capitalResourceId),
-                        style = MaterialTheme.typography.bodyMedium
+                        fontSize = dimensionResource(R.dimen.text_size_body).value.sp,
+                        modifier = Modifier.padding(start = dimensionResource(R.dimen.padding_medium))
                     )
                     Text(
                         text = " • " + stringResource(country.codeResourceId),
-                        style = MaterialTheme.typography.bodyMedium
+                        fontSize = dimensionResource(R.dimen.text_size_body).value.sp,
+                        modifier = Modifier.padding(start = dimensionResource(R.dimen.padding_small))
                     )
                 }
             }
