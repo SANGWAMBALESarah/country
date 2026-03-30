@@ -30,4 +30,15 @@
     <string name="country_name_10">Inde</string>
     <string name="country_capital_10">New Delhi</string>
     <string name="country_code_10">IN</string>
+    <string name="country_description_1">The Democratic Republic of the Congo is a country in Central Africa.</string>
+    <string name="country_description_2">France is a country in Western Europe.</string>
+    <string name="country_description_3">Canada is a country in North America.</string>
+    <string name="country_description_4">Japan is a country in East Asia.</string>
+    <string name="country_description_5">Italy is a country in Southern Europe.</string>
+    <string name="country_description_6">Brazil is a country in South America.</string>
+    <string name="country_description_7">Morocco is a country in North Africa.</string>
+    <string name="country_description_8">Germany is a country in Central Europe.</string>
+    <string name="country_description_9">Argentina is a country in South America.</string>
+    <string name="country_description_10">India is a country in South Asia.</string>
+    <string name="expand_button_content_description">Expand button</string>
 </resources>
